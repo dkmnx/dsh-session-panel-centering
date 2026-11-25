@@ -40,13 +40,30 @@ With the plugin, the transcript stays centered in the space beside the panel:
 
 ## How it works
 
-The host sets `--dsh-chat-end-reserve` when a session panel or other side content needs space. This plugin sets `--dsh-chat-end-inset` to that reserve, which re-centers the transcript column instead of leaving a dead gutter. It only changes CSS; it does not touch conversation data or settings.
+The host sets `--dsh-chat-end-reserve` when a session panel or other side content needs space. This plugin sets `--dsh-chat-end-inset` to that reserve, which re-centers the transcript column instead of leaving a dead gutter. It changes only CSS. It does not touch conversation data or settings.
 
-## Development
+## Verify the layout
+
+Run the bundle check before publishing. It packs the plugin and runs the client test.
 
 ```bash
-npm pack --dry-run
+npm run check
 ```
+
+CI runs the same command on pushes and pull requests.
+
+To check a running session, dock the Session panel and open browser DevTools. Run this in the console:
+
+```js
+getComputedStyle(document.querySelector('[data-conversation-content]'))
+  .getPropertyValue('--dsh-chat-end-inset')
+```
+
+Compare the result with `--dsh-chat-end-reserve`. A match means the rule is active. If the host sets no reserve, the value is `0px` and the layout stays unchanged.
+
+The plugin supports DSH `^0.2.3-alpha.2`, as declared in `package.json`. Older hosts may lack the conversation slot or the reserve variable.
+
+## Development
 
 The package exports `./index.js` (host half, no-op), `./client.js` (Client UI module), `./icon`, and `./locale/*.json`.
 
