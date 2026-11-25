@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-panel-centering",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Centers the conversation transcript in the space beside the docked Session panel instead of pinning it to the start edge.",
   "license": "MIT",
