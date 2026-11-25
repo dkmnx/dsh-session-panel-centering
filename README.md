@@ -32,11 +32,11 @@ Requires DSH `^0.2.3-alpha.2`.
 
 Before, DSH pinned the transcript toward the start edge when the Session panel was open:
 
-![Before](docs/before.png)
+![Before](assets/before.png)
 
 With the plugin, the transcript stays centered in the space beside the panel:
 
-![After](docs/after.png)
+![After](assets/after.png)
 
 ## How it works
 
