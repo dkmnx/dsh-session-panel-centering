@@ -18,6 +18,9 @@
     "./icon": "./icon.svg"
   },
   "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "LICENSE", "assets/*.png"],
+  "scripts": {
+    "check": "npm pack --dry-run && node --test tests/client.test.js"
+  },
   "engines": { "dsh": "^0.2.3-alpha.2" },
   "dsh": {
     "bundle": { "patch": "./cordis.patch.yml" },
