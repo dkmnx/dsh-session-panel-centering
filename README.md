@@ -28,6 +28,16 @@ This requires `dsh` on your PATH. To remove it later, run `dsh plugin --profile 
 
 Requires DSH `^0.2.3-alpha.2`.
 
+## Preview
+
+Before, DSH pinned the transcript toward the start edge when the Session panel was open:
+
+![Before](docs/before.png)
+
+With the plugin, the transcript stays centered in the space beside the panel:
+
+![After](docs/after.png)
+
 ## How it works
 
 The host sets `--dsh-chat-end-reserve` when a session panel or other side content needs space. This plugin sets `--dsh-chat-end-inset` to that reserve, which re-centers the transcript column instead of leaving a dead gutter. It only changes CSS; it does not touch conversation data or settings.
