@@ -1,0 +1,30 @@
+{
+  "name": "dsh-session-panel-centering",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Centers the conversation transcript in the space beside the docked Session panel instead of pinning it to the start edge.",
+  "license": "MIT",
+  "author": "dkmnx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dkmnx/dsh-session-panel-centering.git"
+  },
+  "homepage": "https://github.com/dkmnx/dsh-session-panel-centering#readme",
+  "keywords": ["deepseek-harness", "dsh", "plugin", "ui", "conversation", "session-panel"],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "LICENSE"],
+  "engines": { "dsh": "^0.2.3-alpha.2" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
+    }
+  }
+}
