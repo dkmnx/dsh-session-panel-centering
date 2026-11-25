@@ -1,5 +1,9 @@
 # dsh-session-panel-centering
 
+[![npm version](https://img.shields.io/npm/v/dsh-session-panel-centering.svg)](https://www.npmjs.com/package/dsh-session-panel-centering)
+[![check](https://github.com/dkmnx/dsh-session-panel-centering/actions/workflows/check.yml/badge.svg)](https://github.com/dkmnx/dsh-session-panel-centering/actions/workflows/check.yml)
+[![license](https://img.shields.io/npm/l/dsh-session-panel-centering.svg)](LICENSE)
+
 A DeepSeek Harness (DSH) UI plugin that keeps the conversation centered when the Session panel is docked beside it.
 
 DSH normally pins the transcript toward the start edge when the Session panel opens. This plugin overrides the host's chat end inset so the transcript and composer stay centered in the space beside the panel.
